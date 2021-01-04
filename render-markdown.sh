@@ -7,9 +7,11 @@ function renderOneDay() {
   
   readonly local title=$(echo "$path" | sed "s/.\/\([0-9]\{4\}\)\/\([0-9]\{2\}\)\/\([0-9]\{2\}\)\.md/## \1-\2-\3/")
   echo
+  echo "<article>"
   echo $title
   echo
   cat $path
+  echo "</article>"
 }
 
 export -f renderOneDay

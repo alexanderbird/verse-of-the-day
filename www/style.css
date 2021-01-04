@@ -1,5 +1,22 @@
-body {
-  max-width: 800px;
-  margin: auto;
-  background-color: #FFF6F6;
+article {
+  background-color: #FFF1;
+  padding: 12px;
+  margin-bottom: 32px;
+  border-radius: 6px;
+}
+
+@media (prefers-color-scheme: dark) {
+  article {
+    background-color: #FFF1;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  article {
+    background-color: #0001;
+  }
+}
+
+article h2 {
+  margin-top: 0;
 }

@@ -15,5 +15,7 @@ function renderOneDay() {
 export -f renderOneDay
 
 cat ./README.md
-extra_stuff="$([ "$(uname -s)" = "Darwin" ] && echo "" || echo "-regextype sed")"
-find . $extra_stuff -regex "./[0-9]\{4\}/[0-9]\{2\}/[0-9]\{2\}\.md" | sort -r | xargs -n 1 bash -c renderOneDay
+extra_find_flags="$([ "$(uname -s)" = "Darwin" ] && echo "" || echo "-regextype sed")"
+
+find . $extra_find_flags -regex "./[0-9]\{4\}/[0-9]\{2\}/[0-9]\{2\}\.md" | sort -r | xargs -n 1 bash -c renderOneDay
+

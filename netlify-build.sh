@@ -1,5 +1,6 @@
 #!/bin/bash
 
-./build.sh > index.md
+rm -rf ./www
+mkdir www
 
-bundle exec jekyll build
+./build.sh | pandoc -f markdown -t html > www/index.html

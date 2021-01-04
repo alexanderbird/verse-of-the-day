@@ -12,7 +12,5 @@ function renderOneDay() {
 
 export -f renderOneDay
 
-echo ---
-echo ---
 cat ./README.md
-find . -regex "./[0-9]\{4\}/[0-9]\{2\}/[0-9]\{2\}\.md" | sort -r | xargs -n 1 bash -c renderOneDay
+find . -regextype sed -regex "./[0-9]\{4\}/[0-9]\{2\}/[0-9]\{2\}\.md" | sort -r | xargs -n 1 bash -c renderOneDay

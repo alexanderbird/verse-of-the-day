@@ -5,6 +5,10 @@ article {
   border-radius: 6px;
 }
 
+blockquote {
+  font-style: unset;
+}
+
 @media (prefers-color-scheme: dark) {
   article {
     background-color: #FFF1;

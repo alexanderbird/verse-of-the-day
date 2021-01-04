@@ -1,4 +1,9 @@
+body {
+  scroll-snap-type: y mandatory;
+}
+
 article {
+  scroll-snap-align: start;
   background-color: #FFF1;
   padding: 12px;
   margin-bottom: 32px;
@@ -24,3 +29,4 @@ blockquote {
 article h2 {
   margin-top: 0;
 }
+

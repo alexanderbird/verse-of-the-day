@@ -1,0 +1,2 @@
+[build]
+  command = "./netlify-build.sh"

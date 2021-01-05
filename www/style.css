@@ -30,3 +30,10 @@ article h2 {
   margin-top: 0;
 }
 
+.YHWH__first {
+}
+
+.YHWH__rest {
+  text-transform: uppercase;
+  font-size: 0.8em;
+}

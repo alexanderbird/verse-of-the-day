@@ -10,7 +10,9 @@ function renderOneDay() {
   echo "<article>"
   echo $title
   echo
-  cat $path
+  cat $path \
+    | sed "s/LORD/<span title='YHWH, covenant name of God'><span class='YHWH__first'>L<\/span><span class='YHWH__rest'>ord<\/span><\/span>/g" \
+    | sed "s/GOD/<span title='YHWH, covenant name of God'><span class='YHWH__first'>G<\/span><span class='YHWH__rest'>od<\/span><\/span>/g"
   echo "</article>"
 }
 

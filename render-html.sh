@@ -31,6 +31,15 @@ cat >> ./www/index.html << EOF
   </head>
 
   <body>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        Array.from(document.querySelectorAll('.notes-header')).forEach(header => {
+          header.addEventListener('click', () => {
+            header.classList.toggle('notes-header--show');
+          });
+        });
+      });
+    </script>
 EOF
 
 ./render-markdown.sh | pandoc -f markdown -t html >> www/index.html

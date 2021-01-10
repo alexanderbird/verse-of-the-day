@@ -5,12 +5,13 @@ set -e
 function renderOneDay() {
   readonly local path=$0
   
-  readonly local title=$(echo "$path" | sed "s/.\/\([0-9]\{4\}\)\/\([0-9]\{2\}\)\/\([0-9]\{2\}\)\.md/## \1-\2-\3/")
+  readonly local year=$(echo "$path" | sed "s/.\/\([0-9]\{4\}\)\/\([0-9]\{2\}\)\/\([0-9]\{2\}\)\.md/\1-\2-\3/")
   echo
-  echo "<article>"
-  echo $title
+  echo "<article id='$year'>"
+  echo "## $year"
   echo
   cat $path \
+    | sed "s/^### Notes.*$/<h3 class='notes-header'>Notes<\/h3>/" \
     | sed "s/LORD/<span title='YHWH, covenant name of God'><span class='YHWH__first'>L<\/span><span class='YHWH__rest'>ord<\/span><\/span>/g" \
     | sed "s/GOD/<span title='YHWH, covenant name of God'><span class='YHWH__first'>G<\/span><span class='YHWH__rest'>od<\/span><\/span>/g"
   echo "</article>"

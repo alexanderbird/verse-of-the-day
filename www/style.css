@@ -1,3 +1,18 @@
+:root {
+  --emphasis-color: #094151;
+  --article-gap: 32px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --emphasis-color: #89C6F4;
+  }
+}
+
+html {
+  scroll-padding-top: calc(var(--article-gap) * 0.5);
+}
+
 body {
   scroll-snap-type: y proximity;
 }
@@ -6,8 +21,23 @@ article {
   scroll-snap-align: start;
   background-color: #FFF1;
   padding: 12px;
-  margin-bottom: 32px;
+  margin-bottom: var(--article-gap);
   border-radius: 6px;
+}
+
+:target h2 {
+  color: var(--emphasis-color);
+  font-weight: bold;
+}
+
+h2 a {
+  font-style: inherit;
+  text-decoration: inherit;
+  color: inherit;
+}
+
+h2 a:hover:after {
+  content: ' ⚓';
 }
 
 blockquote {

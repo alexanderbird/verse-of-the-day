@@ -1,0 +1,11 @@
+#!/bin/bash
+
+set -e
+set -x
+
+git add -A && \
+  git diff --staged --name-status \
+  | head -n 1 \
+  | awk '{print $2}' \
+  | sed 's/\//-/g;s/.md//;s/.*/git commit -m "Add &"/' \
+  | bash

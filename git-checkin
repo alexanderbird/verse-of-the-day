@@ -9,3 +9,5 @@ git add -A && \
   | awk '{print $2}' \
   | sed 's/\//-/g;s/.md//;s/.*/git commit -m "Add &"/' \
   | bash
+
+git push origin main

@@ -10,7 +10,8 @@ function renderOneDay() {
   echo "<article id='$year'>"
   echo "<h2><a href='#$year'>$year</a></h2>"
   echo
-  cat $path \
+  trailing_newline="\n"
+  cat $path <(printf "$trailing_newline") \
     | sed "s/^### Notes.*$/<h3 class='notes-header'>Notes<\/h3>/" \
     | sed "s/LORD/<span title='YHWH, covenant name of God'><span class='YHWH__first'>L<\/span><span class='YHWH__rest'>ord<\/span><\/span>/g" \
     | sed "s/GOD/<span title='YHWH, covenant name of God'><span class='YHWH__first'>G<\/span><span class='YHWH__rest'>od<\/span><\/span>/g"
